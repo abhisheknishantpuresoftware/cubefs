@@ -14,9 +14,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout repo
-        uses: actions/checkout@v2
-      - name: checkout tag
-        run: git checkout v3.0.0  
+        uses: actions/checkout@v2  
       - name: Check gofmt
         run: |
           find . -type f -name "*.go" | grep -v 'vendor' |grep -v 'depends'| xargs gofmt -l > gofmt_results.txt
