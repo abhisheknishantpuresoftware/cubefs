@@ -6,8 +6,6 @@ on:
   pull_request:
     branches: [ master ]
     
-env:    
-  release: v1.9
 jobs:
 
   Build-Image:
@@ -29,7 +27,7 @@ jobs:
           file: ./docker/Dockerfile
           platforms: linux/amd64,linux/arm64
           push: true
-          tags: abhishek138/cfs-base:$release
+          tags: abhishek138/cfs-base:1.9
 
   ci-tests:
     runs-on: ubuntu-latest
