@@ -1,10 +1,13 @@
 name: CI
+
 on:
   push:
     branches: [ master ]
   pull_request:
     branches: [ master ]
-
+    
+env:    
+  release: v1.9
 jobs:
 
   Build-Image:
@@ -26,7 +29,7 @@ jobs:
           file: ./docker/Dockerfile
           platforms: linux/amd64,linux/arm64
           push: true
-          tags: odidev/cfs-base:latest
+          tags: odidev/cfs-base:$release
 
   ci-tests:
     runs-on: ubuntu-latest
